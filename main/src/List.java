@@ -25,7 +25,7 @@ public interface List<E> {
      * @param i index of the element to remove
      * @return the element that was removed
      */
-    public Node<E> remove(int i) throws IndexOutOfBoundsException;
+    public E remove(int i) throws IndexOutOfBoundsException;
 
     /**
      * Gets the element at index i
@@ -33,7 +33,7 @@ public interface List<E> {
      * @param i index of the element
      * @return the element
      */
-    public Node<E>  get(int i) throws IndexOutOfBoundsException;
+    public E get(int i) throws IndexOutOfBoundsException;
 
     /**
      * Sets the element at i to a new value
