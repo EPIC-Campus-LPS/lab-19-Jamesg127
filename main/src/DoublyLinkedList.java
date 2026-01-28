@@ -9,6 +9,12 @@ public class DoublyLinkedList<E> implements List<E> {
         return traverse(i - 1, node.getNext());
     }
 
+    /**
+     * Adds an element to the end of the list
+     * @param element element to add to the list
+     */
+
+     @Override
     public void add(E element) {
         if(size == 0) {
             head = new Node<>(element);
@@ -24,6 +30,11 @@ public class DoublyLinkedList<E> implements List<E> {
         newElem.setPrevious(cur);
     }
 
+    /**
+     * Adds an element at index i to the Linked List
+     * @param i index of the element
+     * @param element element to add to the list
+     */
     @Override
     public void add(int i, E element) {
         if (head == null) {
@@ -53,12 +64,20 @@ public class DoublyLinkedList<E> implements List<E> {
         newElem.setNext(cur);
     }
 
+    /**
+     * Removes all elements from the list
+     */
     @Override
     public void remove() {
         head = null;
         size = 0;
     }
 
+    /**
+     * removes the element at index i and returns that element
+     * @param i index of the element to remove
+     * @return element that is removed
+     */
     @Override
     public E remove(int i) {
         if (i >= size) {
@@ -74,26 +93,48 @@ public class DoublyLinkedList<E> implements List<E> {
         return cur.getData();
     }
 
+    /**
+     * gets an element at index i
+     * @param i index of the element
+     * @return element at index i
+     */
     @Override
     public E get(int i) {
         return traverse(i, head).getData();
     }
 
+    /**
+     * sets an element at index i
+     * @param i index of the element to set
+     * @param element new value of the element
+     */
     @Override
     public void set(int i, E element) {
         traverse(i, head).setData(element);
     }
 
+    /**
+     * gets the size of the list
+     * @return the size of the list
+     */
     @Override
     public int size() {
         return size;
     }
 
+    /**
+     * checks if the list is empty
+     * @return false if not empty and true if empty
+     */
     @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
+    /**
+     * translates the list as into a string format
+     * @return the list as a string
+     */
     @Override
     public String toString() {
         String result = "";
